@@ -1,0 +1,29 @@
+/* raleway-300 - latin_cyrillic */
+@font-face {
+  font-family: "Raleway";
+  font-weight: 300;
+  src: local("Raleway"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../assets/fonts/raleway-v26-latin_cyrillic-200.woff2")
+      format("woff2"),
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+      url("../assets/fonts/raleway-v26-latin_cyrillic-200.woff") format("woff");
+}
+
+/* raleway-regular - latin_cyrillic */
+@font-face {
+  font-family: "Raleway";
+  font-weight: 400;
+  src: local("Raleway"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../assets/fonts/raleway-v26-latin_cyrillic-regular.woff2")
+      format("woff2"),
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+      url("../assets/fonts/raleway-v26-latin_cyrillic-regular.woff")
+      format("woff");
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+}
