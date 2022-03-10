@@ -15,6 +15,12 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
     color: ${textColor};
   }
+  ul, li {
+    list-style-type: none;
+  }
+  a {
+    text-decoration: none;
+  }
 `;
 
 export default GlobalStyle;
