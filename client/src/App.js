@@ -8,7 +8,7 @@ import "./style/fonts.css";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/botanica-shop">
       <ThemeContext>
         <GlobalStyle />
         <AppLayout />
