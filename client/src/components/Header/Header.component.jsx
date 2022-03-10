@@ -2,23 +2,26 @@ import React from "react";
 import { withTheme } from "styled-components";
 import { Button } from "../../components/Button";
 import { useTheme } from "../../context/ThemeContext";
-import { HeaderContainer, Navigation } from "./Header.styles";
 import { ReactComponent as Sun } from "../../assets/images/sun.svg";
 import { ReactComponent as Moon } from "../../assets/images/moon.svg";
+import { Link } from "react-router-dom";
+import { HeaderContainer, Navigation } from "./Header.styles";
 
 const Header = ({ theme }) => {
   const themeToggle = useTheme();
 
   return (
     <HeaderContainer>
-      <h2>Botanica</h2>
+      <Link to="/">
+        <h2>Botanica</h2>
+      </Link>
       <Navigation>
         <ul>
           <li>
-            <a href="/">Каталог</a>
+            <Link to="catalog">Каталог</Link>
           </li>
           <li>
-            <a href="/">О нас</a>
+            <Link to="about-us">О нас</Link>
           </li>
         </ul>
       </Navigation>

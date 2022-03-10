@@ -1,14 +1,30 @@
 import React from "react";
-import Header from "../Header/Header";
-import { AppLayoutContainer, Subtitle, Title } from "./AppLayout.style";
+import { Routes, Route } from "react-router-dom";
+
+import Home from "../Home/Home.component";
+import Catalog from "../Catalog/Catalog.component";
+import Header from "../../components/Header/Header.component";
+
+import { AppLayoutContainer } from "./AppLayout.style";
+import About from "../About/About.component";
 
 const AppLayout = () => {
   return (
     <AppLayoutContainer>
       <Header />
-      <Title>Botanica</Title>
-      <Subtitle>Комнатные растения в Минске</Subtitle>
-      <p>Paragraph</p>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="catalog" element={<Catalog />} />
+        <Route path="about-us" element={<About />} />
+        <Route
+          path="*"
+          element={
+            <main style={{ padding: "1rem" }}>
+              <p>There's nothing here!</p>
+            </main>
+          }
+        />
+      </Routes>
     </AppLayoutContainer>
   );
 };
