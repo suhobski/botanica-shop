@@ -9,6 +9,11 @@ const GlobalStyle = createGlobalStyle`
     color: inherit;
   }
 
+  html {
+    width:100vw;
+    overflow-x:hidden;
+  }
+
   html,
   body,
   #root {
