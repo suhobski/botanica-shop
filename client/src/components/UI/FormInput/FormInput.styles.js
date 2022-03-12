@@ -9,6 +9,7 @@ export const Input = styled.input`
   border-bottom: 1px solid #414141;
   outline: none;
   font-size: 18px;
+  cursor: pointer;
 `;
 
 export const Label = styled.label`
