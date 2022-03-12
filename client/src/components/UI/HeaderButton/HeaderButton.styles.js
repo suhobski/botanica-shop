@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Button = styled.button`
+const HeaderButton = styled.button`
   background: transparent;
   border: none;
   border-radius: 0.3em;
@@ -8,3 +8,5 @@ export const Button = styled.button`
   cursor: pointer;
   font-size: 1em;
 `;
+
+export default HeaderButton;

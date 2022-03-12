@@ -1,35 +1,45 @@
 import React from "react";
 import { withTheme } from "styled-components";
-import { Button } from "../../components/Button";
 import { useTheme } from "../../context/ThemeContext";
-import { ReactComponent as Sun } from "../../assets/images/sun.svg";
-import { ReactComponent as Moon } from "../../assets/images/moon.svg";
-import { Link } from "react-router-dom";
-import { HeaderContainer, Navigation } from "./Header.styles";
+import { connect } from "react-redux";
 
-const Header = ({ theme }) => {
+import { HeaderContainer, Navigation, NavLink } from "./Header.styles";
+
+import { ReactComponent as Moon } from "../../assets/images/moon.svg";
+import { ReactComponent as Sun } from "../../assets/images/sun.svg";
+import { auth } from "../../firebase/firebase.utils";
+import HeaderButton from "../UI/HeaderButton/HeaderButton.styles";
+
+const Header = ({ theme, currentUser }) => {
   const themeToggle = useTheme();
+
+  console.log("currentUser", currentUser);
 
   return (
     <HeaderContainer>
-      <Link to="/">
+      <NavLink to="/">
         <h2>Botanica</h2>
-      </Link>
+      </NavLink>
       <Navigation>
-        <ul>
-          <li>
-            <Link to="catalog">Каталог</Link>
-          </li>
-          <li>
-            <Link to="about-us">О нас</Link>
-          </li>
-        </ul>
+        <NavLink to="catalog">Каталог</NavLink>
+        <NavLink to="about-us">О нас</NavLink>
+        {currentUser ? (
+          <NavLink as="div" onClick={() => auth.signOut()}>
+            Выход
+          </NavLink>
+        ) : (
+          <NavLink to="sign-in">Вход</NavLink>
+        )}
       </Navigation>
-      <Button onClick={() => themeToggle.toggle()}>
+      <HeaderButton onClick={() => themeToggle.toggle()}>
         {theme.mode === "dark" ? <Moon /> : <Sun />}
-      </Button>
+      </HeaderButton>
     </HeaderContainer>
   );
 };
 
-export default withTheme(Header);
+const mapStateToProps = (state) => ({
+  currentUser: state.user.currentUser,
+});
+
+export default withTheme(connect(mapStateToProps)(Header));

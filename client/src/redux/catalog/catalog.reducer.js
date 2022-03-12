@@ -1,9 +1,5 @@
-import React from "react";
-import CatalogItem from "../../components/PlantCard/PlantCard.component";
-import { CatalogContainer, CatalogPlants } from "./Catalog.styles";
-
-function Catalog() {
-  const plants = [
+const INITIAL_STATE = {
+  catalog: [
     {
       id: 1,
       img: "./img/plants/dracaena1.jpg",
@@ -67,18 +63,12 @@ function Catalog() {
       date: new Date(),
       inStock: true,
     },
-  ];
+  ],
+};
 
-  return (
-    <CatalogContainer>
-      <h3>Catalog</h3>
-      <CatalogPlants>
-        {plants.map((plant) => (
-          <CatalogItem plant={plant} key={plant.id} />
-        ))}
-      </CatalogPlants>
-    </CatalogContainer>
-  );
-}
-
-export default Catalog;
+const catalogReducer = (state = INITIAL_STATE, action) => {
+  switch (action.type) {
+    default:
+      return state;
+  }
+};

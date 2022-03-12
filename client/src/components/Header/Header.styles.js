@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { secondBackgroundColor } from "../../style/theme";
 
@@ -15,11 +16,11 @@ export const HeaderContainer = styled.header`
 `;
 
 export const Navigation = styled.nav`
-  & ul {
-    display: flex;
-  }
-  & li {
-    margin: 0 8px;
-    text-transform: uppercase;
-  }
+  display: flex;
+`;
+
+export const NavLink = styled(Link)`
+  margin: 8px;
+  text-transform: uppercase;
+  cursor: pointer;
 `;

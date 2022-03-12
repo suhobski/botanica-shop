@@ -1,8 +1,8 @@
 import React from "react";
+import Button from "../UI/Button.component";
 
 import {
   CatalogItemComtainer,
-  PlantButton,
   PlantFooter,
   PlantImage,
   PlantPrice,
@@ -18,7 +18,7 @@ function CatalogItem({ plant }) {
       <p>{title}</p>
       <PlantFooter>
         <PlantPrice>{cardPrice}</PlantPrice>
-        <PlantButton>В корзину</PlantButton>
+        <Button>В корзину</Button>
       </PlantFooter>
     </CatalogItemComtainer>
   );
