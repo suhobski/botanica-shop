@@ -20,4 +20,9 @@ export const PlantPrice = styled.p`
   font-size: 1.4rem;
   font-weight: bold;
   user-select: none;
+  letter-spacing: 1px;
+
+  &:first-letter {
+    letter-spacing: 3px;
+  }
 `;

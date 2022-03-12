@@ -9,7 +9,7 @@ export const AppLayoutContainer = styled.div`
 export const Main = styled.main`
   padding: 8px;
 
-  @media (min-width: 1000px) {
-    padding-right: 22px;
+  @media (min-width: 800px) {
+    padding-right: 30px;
   }
 `;

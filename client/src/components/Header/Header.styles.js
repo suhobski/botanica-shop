@@ -3,15 +3,15 @@ import styled from "styled-components";
 import { secondBackgroundColor } from "../../style/theme";
 
 export const HeaderContainer = styled.header`
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
   align-items: center;
   padding: 8px;
   height: 50px;
   background-color: ${secondBackgroundColor};
 
-  @media (min-width: 1000px) {
-    padding-right: 22px;
+  @media (min-width: 800px) {
+    padding-right: 30px;
   }
 `;
 
@@ -20,7 +20,7 @@ export const Navigation = styled.nav`
 `;
 
 export const NavLink = styled(Link)`
-  margin: 8px;
+  margin-right: 12px;
   text-transform: uppercase;
   cursor: pointer;
 `;

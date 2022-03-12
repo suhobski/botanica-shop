@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const CatalogContainer = styled.main`
-  padding: 8px;
   text-align: left;
 `;
 
