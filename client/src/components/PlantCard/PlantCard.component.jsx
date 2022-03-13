@@ -1,4 +1,8 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+
+import { addItem } from "../../redux/cart/cart.actions";
+
 import Button from "../UI/Button.component";
 
 import {
@@ -9,6 +13,7 @@ import {
 } from "./PlantCard.styles";
 
 function CatalogItem({ plant }) {
+  const dispatch = useDispatch();
   const { img, title, price } = plant;
   const cardPrice = price.toFixed(2);
 
@@ -18,7 +23,7 @@ function CatalogItem({ plant }) {
       <p>{title}</p>
       <PlantFooter>
         <PlantPrice>{cardPrice}</PlantPrice>
-        <Button>В корзину</Button>
+        <Button onClick={() => dispatch(addItem(plant))}>В корзину</Button>
       </PlantFooter>
     </CatalogItemComtainer>
   );

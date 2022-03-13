@@ -1,73 +1,10 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import CatalogItem from "../../components/PlantCard/PlantCard.component";
 import { CatalogContainer, CatalogPlants } from "./Catalog.styles";
 
 function Catalog() {
-  const plants = [
-    {
-      id: 1,
-      img: "./img/plants/dracaena1.jpg",
-      title: "Драцена",
-      group: "dracaena",
-      price: 15,
-      date: new Date(),
-      inStock: true,
-    },
-    {
-      id: 2,
-      img: "./img/plants/dracaena1.jpg",
-      title: "Драцена",
-      group: "dracaena",
-      price: 15,
-      date: new Date(),
-      inStock: true,
-    },
-    {
-      id: 3,
-      img: "./img/plants/dracaena1.jpg",
-      title: "Драцена",
-      group: "dracaena",
-      price: 15,
-      date: new Date(),
-      inStock: true,
-    },
-    {
-      id: 4,
-      img: "./img/plants/dracaena1.jpg",
-      title: "Драцена",
-      group: "dracaena",
-      price: 15,
-      date: new Date(),
-      inStock: true,
-    },
-    {
-      id: 5,
-      img: "./img/plants/dracaena1.jpg",
-      title: "Драцена",
-      group: "dracaena",
-      price: 15,
-      date: new Date(),
-      inStock: true,
-    },
-    {
-      id: 6,
-      img: "./img/plants/dracaena1.jpg",
-      title: "Драцена",
-      group: "dracaena",
-      price: 15,
-      date: new Date(),
-      inStock: true,
-    },
-    {
-      id: 7,
-      img: "./img/plants/dracaena1.jpg",
-      title: "Драцена",
-      group: "dracaena",
-      price: 15,
-      date: new Date(),
-      inStock: true,
-    },
-  ];
+  const plants = useSelector((state) => state.catalog);
 
   return (
     <CatalogContainer>
