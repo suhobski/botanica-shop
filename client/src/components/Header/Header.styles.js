@@ -8,11 +8,16 @@ export const HeaderContainer = styled.header`
   align-items: center;
   grid-column-gap: 16px;
   padding: 8px;
-  height: 50px;
   background-color: ${secondBackgroundColor};
 
   @media (min-width: 800px) {
     padding-right: 30px;
+  }
+
+  /* TODO: переделать на нормальное меню */
+  @media (max-width: 500px) {
+    display: grid;
+    grid-template-columns: 1fr auto;
   }
 `;
 

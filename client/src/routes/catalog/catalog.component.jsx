@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import CatalogItem from "../../components/PlantCard/PlantCard.component";
-import { CatalogContainer, CatalogPlants } from "./Catalog.styles";
+import { CatalogContainer, CatalogPlants } from "./catalog.styles";
 
 function Catalog() {
   const plants = useSelector((state) => state.catalog);

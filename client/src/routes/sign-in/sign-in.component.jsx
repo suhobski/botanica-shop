@@ -1,5 +1,9 @@
 import React, { useState } from "react";
-import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
+// import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
+import {
+  signInWithGooglePopup,
+  createUserDocumentFromAuth,
+} from "../../utils/firebase/firebase.utils";
 
 import {
   FormFooter,
@@ -7,31 +11,36 @@ import {
   SingInPageWrap,
   Text,
   StyledLink,
-} from "./SignIn.styles";
+} from "./sign-in.styles";
 
 import Button from "../../components/UI/Button.component";
 import FormInput from "../../components/UI/FormInput/FormInput.component";
 
 function SingIn() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    try {
-      await auth.signInWithEmailAndPassword(email, password);
-
-      setEmail("");
-      setPassword("");
-    } catch (error) {
-      console.log("error", error.message);
-    }
+  const logGoogleUser = async () => {
+    const { user } = await signInWithGooglePopup();
+    const userDocRef = await createUserDocumentFromAuth(user);
   };
+
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
+
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+
+  //   try {
+  //     await auth.signInWithEmailAndPassword(email, password);
+
+  //     setEmail("");
+  //     setPassword("");
+  //   } catch (error) {
+  //     console.log("error", error.message);
+  //   }
+  // };
 
   return (
     <SingInPageWrap>
-      <h3>I already have an account</h3>
+      {/* <h3>I already have an account</h3>
       <p>Sign in with email and password</p>
       <FormWrap onSubmit={handleSubmit}>
         <FormInput
@@ -60,7 +69,9 @@ function SingIn() {
       <Text>
         ...or <StyledLink to="/react-todo/sign-up">Sign Up</StyledLink> if you
         do not have an account
-      </Text>
+      </Text> */}
+
+      <Button onClick={logGoogleUser}>Google Popup</Button>
     </SingInPageWrap>
   );
 }

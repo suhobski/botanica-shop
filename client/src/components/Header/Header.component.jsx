@@ -2,7 +2,6 @@ import React from "react";
 import { withTheme } from "styled-components";
 import { useTheme } from "../../context/ThemeContext";
 import { connect, useSelector } from "react-redux";
-import { auth } from "../../firebase/firebase.utils";
 
 import { HeaderContainer, Navigation, NavLink } from "./Header.styles";
 import HeaderButton from "../UI/HeaderButton/HeaderButton.styles";
@@ -21,18 +20,16 @@ const Header = ({ theme, currentUser }) => {
       <NavLink to="/">
         <h2>Botanica</h2>
       </NavLink>
+      <CartIcon />
       <Navigation>
         <NavLink to="catalog">Каталог</NavLink>
         <NavLink to="about-us">О нас</NavLink>
         {currentUser ? (
-          <NavLink as="div" onClick={() => auth.signOut()}>
-            Выход
-          </NavLink>
+          <NavLink as="div">Выход</NavLink>
         ) : (
           <NavLink to="sign-in">Вход</NavLink>
         )}
       </Navigation>
-      <CartIcon />
       <HeaderButton onClick={() => themeToggle.toggle()}>
         {theme.mode === "dark" ? <Moon /> : <Sun />}
       </HeaderButton>
