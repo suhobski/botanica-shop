@@ -11,6 +11,7 @@ import Home from "../../routes/home/home.component";
 import About from "../../routes/about/about.component";
 import SingIn from "../../routes/sign-in/sign-in.component";
 import Base from "../../routes/base/base.component";
+import SignUp from "../../routes/sing-up/sign-up.component";
 
 const AppLayout = ({ setCurrentUser, currentUser }) => {
   return (
@@ -20,12 +21,13 @@ const AppLayout = ({ setCurrentUser, currentUser }) => {
           <Route index element={<Home />} />
           <Route path="about-us" element={<About />} />
           <Route path="catalog" element={<Catalog />} />
+          <Route path="sign-up" element={<SignUp />} />
           <Route
             path="sign-in"
             element={currentUser ? <Navigate to="/" /> : <SingIn />}
           />
         </Route>
-        <Route path="*" element={<Home />} />
+        <Route path="*" element={<Base />} />
       </Routes>
     </AppLayoutContainer>
   );

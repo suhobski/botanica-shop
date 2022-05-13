@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-// import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
+
 import {
-  signInWithGooglePopup,
   createUserDocumentFromAuth,
+  signInUserWithEmailAndPassword,
+  signInWithGooglePopup,
 } from "../../utils/firebase/firebase.utils";
 
 import {
@@ -11,43 +12,55 @@ import {
   SingInPageWrap,
   Text,
   StyledLink,
+  SignInTitle,
 } from "./sign-in.styles";
 
 import Button from "../../components/UI/Button.component";
 import FormInput from "../../components/UI/FormInput/FormInput.component";
+import { useDispatch } from "react-redux";
+import { setCurrentUser } from "../../redux/user/user.actions";
 
 function SingIn() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+
   const logGoogleUser = async () => {
     const { user } = await signInWithGooglePopup();
-    const userDocRef = await createUserDocumentFromAuth(user);
+
+    dispatch(setCurrentUser(user));
+
+    await createUserDocumentFromAuth(user);
   };
 
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
+    try {
+      const { user } = await signInUserWithEmailAndPassword(email, password);
 
-  //   try {
-  //     await auth.signInWithEmailAndPassword(email, password);
+      dispatch(setCurrentUser(user));
 
-  //     setEmail("");
-  //     setPassword("");
-  //   } catch (error) {
-  //     console.log("error", error.message);
-  //   }
-  // };
+      setEmail("");
+      setPassword("");
+    } catch (error) {
+      console.log("error", error.message);
+    }
+  };
 
   return (
     <SingInPageWrap>
-      {/* <h3>I already have an account</h3>
-      <p>Sign in with email and password</p>
+      <SignInTitle>
+        Вход через
+        <br />
+        почту и пароль
+      </SignInTitle>
       <FormWrap onSubmit={handleSubmit}>
         <FormInput
           type="email"
           name="email"
           id="email"
-          label="Email"
+          label="Почта"
           value={email}
           handleChange={(e) => setEmail(e.target.value)}
         />
@@ -55,23 +68,21 @@ function SingIn() {
           type="password"
           name="password"
           id="password"
-          label="Password"
+          label="Пароль"
           value={password}
           handleChange={(e) => setPassword(e.target.value)}
         />
         <FormFooter>
-          <Button type="submit">SIGN IN</Button>
-          <Button google onClick={signInWithGoogle} type="button">
-            SIGN IN WITH GOOGLE
+          <Button type="submit">Вход</Button>
+          <Button google onClick={logGoogleUser} type="button">
+            Вход через Google
           </Button>
         </FormFooter>
       </FormWrap>
       <Text>
-        ...or <StyledLink to="/react-todo/sign-up">Sign Up</StyledLink> if you
-        do not have an account
-      </Text> */}
-
-      <Button onClick={logGoogleUser}>Google Popup</Button>
+        ...или <StyledLink to="/sign-up">зарегистрируйся</StyledLink>&nbsp;если
+        нет аккаунта
+      </Text>
     </SingInPageWrap>
   );
 }

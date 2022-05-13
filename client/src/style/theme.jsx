@@ -1,12 +1,12 @@
 import theme from "styled-theming";
 
 export const backgroundColor = theme("mode", {
-  light: "#fafafa",
+  light: "#ffffff",
   dark: "#528e86",
 });
 
 export const textColor = theme("mode", {
-  light: "#528e86",
+  light: "#2b7959",
   dark: "#fafafa",
 });
 
