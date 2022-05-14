@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/botanica-shop/static/css/main.eff6e1d1.css",
-    "main.js": "/botanica-shop/static/js/main.284f9397.js",
+    "main.js": "/botanica-shop/static/js/main.14cdf6e0.js",
     "static/media/raleway-v26-latin_cyrillic-regular.woff": "/botanica-shop/static/media/raleway-v26-latin_cyrillic-regular.c6f1771dfb3fe2d20afb.woff",
     "static/media/raleway-v26-latin_cyrillic-200.woff": "/botanica-shop/static/media/raleway-v26-latin_cyrillic-200.2777814d966bdfea77d6.woff",
     "static/media/raleway-v26-latin_cyrillic-regular.woff2": "/botanica-shop/static/media/raleway-v26-latin_cyrillic-regular.83bd9db61744463086a8.woff2",
@@ -11,10 +11,10 @@
     "static/media/moon.svg": "/botanica-shop/static/media/moon.0e5096635bf572e80d9113fc0e1f99c1.svg",
     "static/media/sun.svg": "/botanica-shop/static/media/sun.b9c5ef8ae8d93b9fee4d39505d55d259.svg",
     "main.eff6e1d1.css.map": "/botanica-shop/static/css/main.eff6e1d1.css.map",
-    "main.284f9397.js.map": "/botanica-shop/static/js/main.284f9397.js.map"
+    "main.14cdf6e0.js.map": "/botanica-shop/static/js/main.14cdf6e0.js.map"
   },
   "entrypoints": [
     "static/css/main.eff6e1d1.css",
-    "static/js/main.284f9397.js"
+    "static/js/main.14cdf6e0.js"
   ]
 }
