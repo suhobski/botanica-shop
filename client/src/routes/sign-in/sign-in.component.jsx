@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import {
-  createUserDocumentFromAuth,
   signInUserWithEmailAndPassword,
   signInWithGooglePopup,
 } from "../../utils/firebase/firebase.utils";
@@ -17,30 +17,23 @@ import {
 
 import Button from "../../components/UI/Button.component";
 import FormInput from "../../components/UI/FormInput/FormInput.component";
-import { useDispatch } from "react-redux";
-import { setCurrentUser } from "../../redux/user/user.actions";
 
 function SingIn() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const dispatch = useDispatch();
 
-  const logGoogleUser = async () => {
-    const { user } = await signInWithGooglePopup();
-
-    dispatch(setCurrentUser(user));
-
-    await createUserDocumentFromAuth(user);
+  const signInWithGoogle = async () => {
+    await signInWithGooglePopup();
+    navigate("/catalog", { replace: true });
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const { user } = await signInUserWithEmailAndPassword(email, password);
-
-      dispatch(setCurrentUser(user));
-
+      await signInUserWithEmailAndPassword(email, password);
+      navigate("/catalog", { replace: true });
       setEmail("");
       setPassword("");
     } catch (error) {
@@ -74,7 +67,7 @@ function SingIn() {
         />
         <FormFooter>
           <Button type="submit">Вход</Button>
-          <Button google onClick={logGoogleUser} type="button">
+          <Button google onClick={signInWithGoogle} type="button">
             Вход через Google
           </Button>
         </FormFooter>
