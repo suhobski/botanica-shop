@@ -6,8 +6,10 @@ function Home() {
   return (
     <>
       <Title>Botanica</Title>
-      <Subtitle>Комнатные растения в Минске</Subtitle>
-      <p>Paragraph</p>
+      <Subtitle>
+        Комнатные растения
+        <br />в Минске
+      </Subtitle>
     </>
   );
 }

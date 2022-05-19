@@ -1,10 +1,15 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
+
+import { Link } from "react-router-dom";
+
+import { textColor } from "../../style/theme";
 
 export const SingInPageWrap = styled.div`
   display: grid;
   justify-items: center;
+  align-items: center;
   max-width: 350px;
+  height: 100%;
   margin: 40px auto;
 `;
 
@@ -28,10 +33,12 @@ export const FormFooter = styled.footer`
 export const Text = styled.p`
   margin-top: 16px;
   font-size: 16px;
+  text-align: center;
+  line-height: 24px;
 `;
 
 export const StyledLink = styled(Link)`
-  border-bottom: 1px solid #414141;
+  border-bottom: 1px solid ${textColor};
   text-transform: uppercase;
 
   &:hover {

@@ -15,8 +15,8 @@ import {
   SignInTitle,
 } from "./sign-in.styles";
 
-import Button from "../../components/UI/Button.component";
-import FormInput from "../../components/UI/FormInput/FormInput.component";
+import Button from "../../components/button/Button.component";
+import FormInput from "../../components/form-input/form-input.component";
 
 function SingIn() {
   const navigate = useNavigate();
@@ -46,7 +46,7 @@ function SingIn() {
       <SignInTitle>
         Вход через
         <br />
-        почту и пароль
+        почту
       </SignInTitle>
       <FormWrap onSubmit={handleSubmit}>
         <FormInput
@@ -73,8 +73,9 @@ function SingIn() {
         </FormFooter>
       </FormWrap>
       <Text>
-        ...или <StyledLink to="/sign-up">зарегистрируйся</StyledLink>&nbsp;если
-        нет аккаунта
+        ...или <StyledLink to="/sign-up">зарегистрируйся</StyledLink>,
+        <br />
+        если нет аккаунта
       </Text>
     </SingInPageWrap>
   );

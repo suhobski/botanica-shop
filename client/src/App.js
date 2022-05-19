@@ -1,25 +1,26 @@
 import React from "react";
-import { ThemeContext } from "./context/ThemeContext.jsx";
-import { BrowserRouter } from "react-router-dom";
-import { Provider } from "react-redux";
-import store from "./redux/store";
+import { Routes, Route } from "react-router-dom";
 
-import AppLayout from "./components/AppLayout/AppLayout.component.jsx";
+import Catalog from "./routes/catalog/catalog.component";
+import Home from "./routes/home/home.component";
+import About from "./routes/about/about.component";
+import SingIn from "./routes/sign-in/sign-in.component";
+import Base from "./routes/base/base.component";
+import SignUp from "./routes/sing-up/sign-up.component";
 
-import GlobalStyle from "./style/globalStyles.jsx";
-import "./style/fonts.css";
-
-function App() {
+const App = () => {
   return (
-    <Provider store={store}>
-      <BrowserRouter basename="/botanica-shop">
-        <ThemeContext>
-          <GlobalStyle />
-          <AppLayout />
-        </ThemeContext>
-      </BrowserRouter>{" "}
-    </Provider>
+    <Routes>
+      <Route path="/" element={<Base />}>
+        <Route index element={<Home />} />
+        <Route path="about-us" element={<About />} />
+        <Route path="catalog" element={<Catalog />} />
+        <Route path="sign-in" element={<SingIn />} />
+        <Route path="sign-up" element={<SignUp />} />
+      </Route>
+      <Route path="*" element={<Base />} />
+    </Routes>
   );
-}
+};
 
 export default App;

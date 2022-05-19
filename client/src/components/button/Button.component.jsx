@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import { secondBackgroundColor, textColor } from "../../style/theme";
 
 const Button = styled.button`

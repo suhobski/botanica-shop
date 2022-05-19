@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { textColor } from "../style/theme";
+import { backgroundColor, textColor } from "../style/theme";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -18,8 +18,14 @@ const GlobalStyle = createGlobalStyle`
   body,
   #root {
     height: 100%;
-    color: ${textColor};
   }
+  
+  body {
+    min-height: 100vh;
+    color: ${textColor};
+    background: ${backgroundColor};
+  }
+  
   ul, li {
     list-style-type: none;
   }
@@ -29,6 +35,7 @@ const GlobalStyle = createGlobalStyle`
 
   h2 {
     font-size: 30px;
+    font-weight: 400;
   }
 `;
 

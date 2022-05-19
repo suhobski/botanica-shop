@@ -3,14 +3,14 @@ import { useDispatch } from "react-redux";
 
 import { addItem } from "../../redux/cart/cart.actions";
 
-import Button from "../UI/Button.component";
+import Button from "../button/Button.component";
 
 import {
   CatalogItemComtainer,
   PlantFooter,
   PlantImage,
   PlantPrice,
-} from "./PlantCard.styles";
+} from "./plant-card.styles";
 
 function CatalogItem({ plant }) {
   const dispatch = useDispatch();

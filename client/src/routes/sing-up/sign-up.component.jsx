@@ -5,8 +5,8 @@ import {
   createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils";
 
-import Button from "../../components/UI/Button.component";
-import FormInput from "../../components/UI/FormInput/FormInput.component";
+import Button from "../../components/button/Button.component";
+import FormInput from "../../components/form-input/form-input.component";
 
 import { FormWrap } from "../sign-in/sign-in.styles";
 import { SignUpWrap, SignUpTitle } from "./sign-up.styles";

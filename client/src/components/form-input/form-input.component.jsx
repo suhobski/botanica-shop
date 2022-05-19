@@ -1,5 +1,5 @@
 import React from "react";
-import { Label, Input } from "./FormInput.styles";
+import { Label, Input } from "./form-input.styles";
 
 function FormInput({ label, id, handleChange, ...otherProps }) {
   return (

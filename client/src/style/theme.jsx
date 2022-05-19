@@ -11,7 +11,7 @@ export const textColor = theme("mode", {
 });
 
 export const secondBackgroundColor = theme("mode", {
-  light: "#ebf5f4",
+  light: "#ffffff",
   dark: "#477d76",
 });
 

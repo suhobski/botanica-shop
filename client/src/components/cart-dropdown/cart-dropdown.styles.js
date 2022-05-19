@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { backgroundColor, textColor } from "../../style/theme";
-import Button from "../UI/Button.component";
+import Button from "../button/Button.component";
 
 export const CartDropdownContainer = styled.div`
   position: absolute;
@@ -8,8 +8,9 @@ export const CartDropdownContainer = styled.div`
   right: 30px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 240px;
-  height: 340px;
+  height: 380px;
   padding: 10px;
   border: 1px solid ${textColor};
   border-radius: 12px;
@@ -18,12 +19,11 @@ export const CartDropdownContainer = styled.div`
 `;
 
 export const CartItems = styled.div`
-  height: 240px;
   display: flex;
   flex-direction: column;
   overflow: auto;
 `;
 
 export const CartButton = styled(Button)`
-  margin-top: auto;
+  margin-top: 10px;
 `;

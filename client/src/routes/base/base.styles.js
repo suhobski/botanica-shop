@@ -7,3 +7,9 @@ export const Main = styled.main`
     padding-right: 30px;
   }
 `;
+
+export const AppContainer = styled.div`
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+`;
