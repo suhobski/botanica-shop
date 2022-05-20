@@ -9,7 +9,7 @@ import { UserProvider } from "./context/user.context";
 
 import App from "./App";
 
-import GlobalStyle from "./style/globalStyles.jsx";
+import GlobalStyle from "./style/globalStyles.js";
 import "./style/fonts.css";
 
 const container = document.getElementById("root");

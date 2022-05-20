@@ -9,4 +9,8 @@ export const NavigationLink = styled(Link)`
   &:last-child {
     margin-right: 0;
   }
+
+  @media (max-width: 500px) {
+    font-size: 40px;
+  }
 `;

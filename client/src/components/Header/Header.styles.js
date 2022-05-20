@@ -12,10 +12,4 @@ export const HeaderContainer = styled.header`
   @media (min-width: 800px) {
     padding-right: 30px;
   }
-
-  /* TODO: переделать на нормальное меню */
-  @media (max-width: 500px) {
-    display: grid;
-    grid-template-columns: 1fr auto;
-  }
 `;

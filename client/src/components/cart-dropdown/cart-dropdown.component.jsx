@@ -1,5 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
 import CartItem from "../cart-item/cart-item.component";
 
 import {
@@ -10,6 +12,11 @@ import {
 
 function CartDropdown() {
   const cartProducts = useSelector((state) => state.cart.cartItems);
+  const navigate = useNavigate();
+
+  const goToCheckoutHandler = () => {
+    navigate("/checkout");
+  };
 
   return (
     <CartDropdownContainer>
@@ -18,7 +25,7 @@ function CartDropdown() {
           <CartItem key={product.id} product={product} />
         ))}
       </CartItems>
-      <CartButton>ОФОРМИТЬ ЗАКАЗ</CartButton>
+      <CartButton onClick={goToCheckoutHandler}>ОФОРМИТЬ ЗАКАЗ</CartButton>
     </CartDropdownContainer>
   );
 }

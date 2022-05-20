@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { backgroundColor, textColor } from "../style/theme";
+import { backgroundColor, textColor } from "./theme";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -28,14 +28,6 @@ const GlobalStyle = createGlobalStyle`
   
   ul, li {
     list-style-type: none;
-  }
-  a {
-    text-decoration: none;
-  }
-
-  h2 {
-    font-size: 30px;
-    font-weight: 400;
   }
 `;
 
