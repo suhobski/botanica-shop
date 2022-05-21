@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 
 import Header from "../../components/header/header.component";
 import { AppContainer, Main } from "./base.styles";
-import Footer from "../../components/footer/footer.component";
+// import Footer from "../../components/footer/footer.component";
 
 function Base() {
   return (
@@ -12,7 +12,7 @@ function Base() {
       <Main>
         <Outlet />
       </Main>
-      <Footer />
+      {/* <Footer /> */}
     </AppContainer>
   );
 }

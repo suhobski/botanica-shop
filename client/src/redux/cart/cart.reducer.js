@@ -2,7 +2,7 @@ import CartActionTypes from "./cart.types";
 import { addItemToCart } from "./cart.utils";
 
 const INITIAL_STATE = {
-  hidden: false,
+  hidden: true,
   cartItems: [],
 };
 
@@ -12,6 +12,11 @@ const cartReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         hidden: !state.hidden,
+      };
+    case CartActionTypes.CLOSE_CART_DRAWER:
+      return {
+        ...state,
+        hidden: true,
       };
     case CartActionTypes.ADD_ITEM:
       return {

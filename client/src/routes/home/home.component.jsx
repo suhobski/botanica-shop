@@ -1,8 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-import { Subtitle, Title } from "./home.styles";
+import { Subtitle, Title, HomeButton } from "./home.styles";
 
 function Home() {
+  const navigate = useNavigate();
+
+  const goToCatalogHandler = () => {
+    navigate("/catalog");
+  };
+
   return (
     <>
       <Title>Botanica</Title>
@@ -10,6 +17,7 @@ function Home() {
         Комнатные растения
         <br />в Минске
       </Subtitle>
+      <HomeButton onClick={goToCatalogHandler}>Перейти в каталог</HomeButton>
     </>
   );
 }

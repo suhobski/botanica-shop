@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 import { textColor } from "../../style/theme";
 
 export const SingInPageWrap = styled.div`
-  display: grid;
+  display: flex;
+  flex-direction: column;
   justify-items: center;
   align-items: center;
   max-width: 350px;

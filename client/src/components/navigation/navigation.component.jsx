@@ -21,11 +21,11 @@ const Navigation = () => {
 
   return (
     <NavigationContainer isMenuOpen={isMenuOpen}>
+      <NavigationLink onClick={closeMenuHandle} to="/">
+        Главная
+      </NavigationLink>
       <NavigationLink onClick={closeMenuHandle} to="catalog">
         Каталог
-      </NavigationLink>
-      <NavigationLink onClick={closeMenuHandle} to="about-us">
-        О нас
       </NavigationLink>
       {currentUser ? (
         <NavigationLink

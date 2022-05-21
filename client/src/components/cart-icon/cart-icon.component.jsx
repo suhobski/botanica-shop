@@ -12,8 +12,17 @@ function CartIcon() {
     (previousValue, cartItem) => previousValue + cartItem.quantity,
     0
   );
+
+  const openCartDrawer = () => {
+    if (!allQuantity) {
+      return;
+    } else {
+      dispatch(toggleCartHidden());
+    }
+  };
+
   return (
-    <IconContainer onClick={() => dispatch(toggleCartHidden())}>
+    <IconContainer onClick={openCartDrawer}>
       <Icon />
       <ItemCount>{allQuantity}</ItemCount>
     </IconContainer>

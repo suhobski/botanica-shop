@@ -1,20 +1,28 @@
 import styled from "styled-components";
-import { backgroundColor, textColor } from "../../style/theme";
+import { backgroundColor } from "../../style/theme";
+
 import Button from "../button/Button.component";
 
-export const CartDropdownContainer = styled.div`
-  position: absolute;
+export const CartDropdownWrap = styled.div`
+  position: fixed;
   top: 50px;
-  right: 30px;
+  left: 0;
+  display: ${({ isHidden }) => (isHidden ? "none" : "block")};
+  width: 110vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+`;
+
+export const CartDropdownContainer = styled.div`
+  position: fixed;
+  right: ${({ isHidden }) => (isHidden ? "-320px" : 0)};
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 240px;
-  height: 380px;
-  padding: 10px;
-  border: 1px solid ${textColor};
-  border-radius: 12px;
+  width: 320px;
+  height: calc(100vh - 50px);
+  padding: 30px 10px 10px;
   background-color: ${backgroundColor};
+  transition: right 0.3s ease-in;
   z-index: 5;
 `;
 

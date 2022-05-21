@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from "styled-components";
+import styled, { css } from "styled-components";
 import { textColor } from "../../style/theme";
 
 export const BurgerWrap = styled.div`
@@ -7,6 +7,7 @@ export const BurgerWrap = styled.div`
   width: 35px;
   height: 35px;
   padding: 5px;
+  cursor: pointer;
   z-index: 50;
 
   @media (max-width: 500px) {

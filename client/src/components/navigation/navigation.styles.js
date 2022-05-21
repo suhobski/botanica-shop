@@ -19,6 +19,5 @@ export const NavigationContainer = styled.nav`
     align-items: center;
     row-gap: 2rem;
     background-color: ${secondBackgroundColor};
-    transition: all 0.3 ease-in;
   }
 `;
