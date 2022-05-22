@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import { secondBackgroundColor, textColor } from "../../style/theme";
+import { secondBackgroundColor, textColor } from '../../style/theme';
 
 const Button = styled.button`
   padding: 8px 16px;

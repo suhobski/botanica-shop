@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import { secondBackgroundColor } from "../../style/theme";
+import { secondBackgroundColor } from '../../style/theme';
 
-export const NavigationContainer = styled.nav`
+const NavigationContainer = styled.nav`
   position: relative;
   display: flex;
   z-index: 40;
@@ -11,7 +11,7 @@ export const NavigationContainer = styled.nav`
     position: fixed;
     top: 0;
     left: 0;
-    display: ${(props) => (props.isMenuOpen ? "flex" : "none")};
+    display: ${(props) => (props.isMenuOpen ? 'flex' : 'none')};
     width: 100%;
     height: 112vh;
     flex-direction: column;
@@ -21,3 +21,5 @@ export const NavigationContainer = styled.nav`
     background-color: ${secondBackgroundColor};
   }
 `;
+
+export default NavigationContainer;

@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import { secondBackgroundColor } from "../../style/theme";
+import { secondBackgroundColor } from '../../style/theme';
 
-export const FooterContainer = styled.footer`
+const FooterContainer = styled.footer`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,3 +10,5 @@ export const FooterContainer = styled.footer`
   text-align: center;
   background-color: ${secondBackgroundColor};
 `;
+
+export default FooterContainer;

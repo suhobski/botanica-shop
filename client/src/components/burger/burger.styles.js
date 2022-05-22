@@ -1,5 +1,5 @@
-import styled, { css } from "styled-components";
-import { textColor } from "../../style/theme";
+import styled, { css } from 'styled-components';
+import { textColor } from '../../style/theme';
 
 export const BurgerWrap = styled.div`
   position: relative;
@@ -21,7 +21,7 @@ export const BurgerInner = styled.div`
   height: 25px;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 7px;
     display: block;
@@ -39,7 +39,7 @@ export const BurgerInner = styled.div`
   }
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 16px;
     display: block;

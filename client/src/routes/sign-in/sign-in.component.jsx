@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import {
   signInUserWithEmailAndPassword,
   signInWithGooglePopup,
-} from "../../utils/firebase/firebase.utils";
+} from '../../utils/firebase/firebase.utils';
 
 import {
   FormFooter,
@@ -13,19 +13,19 @@ import {
   Text,
   StyledLink,
   SignInTitle,
-} from "./sign-in.styles";
+} from './sign-in.styles';
 
-import Button from "../../components/button/Button.component";
-import FormInput from "../../components/form-input/form-input.component";
+import Button from '../../components/button/button.styles';
+import FormInput from '../../components/form-input/form-input.component';
 
-function SingIn() {
+const SingIn = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const signInWithGoogle = async () => {
     await signInWithGooglePopup();
-    navigate("/catalog", { replace: true });
+    navigate('/catalog', { replace: true });
   };
 
   const handleSubmit = async (event) => {
@@ -33,11 +33,11 @@ function SingIn() {
 
     try {
       await signInUserWithEmailAndPassword(email, password);
-      navigate("/catalog", { replace: true });
-      setEmail("");
-      setPassword("");
+      navigate('/catalog', { replace: true });
+      setEmail('');
+      setPassword('');
     } catch (error) {
-      console.log("error", error.message);
+      console.log('error', error.message);
     }
   };
 
@@ -79,6 +79,6 @@ function SingIn() {
       </Text>
     </SingInPageWrap>
   );
-}
+};
 
 export default SingIn;

@@ -1,18 +1,18 @@
-import React from "react";
-import { useDispatch } from "react-redux";
+import React from 'react';
+import { useDispatch } from 'react-redux';
 
-import { addItem } from "../../redux/cart/cart.actions";
+import { addItem } from '../../redux/cart/cart.actions';
 
-import Button from "../button/Button.component";
+import Button from '../button/button.styles';
 
 import {
   CatalogItemComtainer,
   PlantFooter,
   PlantImage,
   PlantPrice,
-} from "./plant-card.styles";
+} from './plant-card.styles';
 
-function CatalogItem({ plant }) {
+const CatalogItem = ({ plant }) => {
   const dispatch = useDispatch();
   const { img, title, price } = plant;
   const cardPrice = price.toFixed(2);
@@ -27,6 +27,6 @@ function CatalogItem({ plant }) {
       </PlantFooter>
     </CatalogItemComtainer>
   );
-}
+};
 
 export default CatalogItem;

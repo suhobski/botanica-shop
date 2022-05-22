@@ -1,13 +1,13 @@
-import styled, { keyframes } from "styled-components";
-import { backgroundColor } from "../../style/theme";
+import styled, { keyframes } from 'styled-components';
+import { backgroundColor } from '../../style/theme';
 
-import Button from "../button/Button.component";
+import Button from '../button/button.styles';
 
 const cartIn = keyframes`
   from {
     right: -320px;
   }
-  to {
+  to { 
     right: 0;
   }
 `;
@@ -16,7 +16,7 @@ export const CartDropdownWrap = styled.div`
   position: fixed;
   top: 50px;
   left: 0;
-  display: ${({ isHidden }) => (isHidden ? "none" : "block")};
+  display: ${({ isHidden }) => (isHidden ? 'none' : 'block')};
   width: 110vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.3);

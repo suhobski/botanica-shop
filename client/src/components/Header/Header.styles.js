@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { secondBackgroundColor } from "../../style/theme";
+import styled from 'styled-components';
+import { secondBackgroundColor } from '../../style/theme';
 
-export const HeaderContainer = styled.header`
+const HeaderContainer = styled.header`
   position: fixed;
   display: grid;
   grid-template-columns: 1fr auto auto auto;
@@ -15,3 +15,5 @@ export const HeaderContainer = styled.header`
     padding-right: 30px;
   }
 `;
+
+export default HeaderContainer;

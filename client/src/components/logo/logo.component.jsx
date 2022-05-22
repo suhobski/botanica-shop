@@ -1,9 +1,9 @@
-import React from "react";
-import { useDispatch } from "react-redux";
+import React from 'react';
+import { useDispatch } from 'react-redux';
 
-import { closeMobileMenu } from "../../redux/mobile-menu/mobile-menu.actions";
+import { closeMobileMenu } from '../../redux/mobile-menu/mobile-menu.actions';
 
-import { LogoLink } from "./logo.styles";
+import LogoLink from './logo.styles';
 
 const Logo = () => {
   const dispatch = useDispatch();

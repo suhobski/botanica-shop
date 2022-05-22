@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import { ReactComponent as ShopingIcon } from "../../assets/images/shopping-bag.svg";
-import { textColor } from "../../style/theme";
+import { ReactComponent as ShopingIcon } from '../../assets/images/shopping-bag.svg';
+import { textColor } from '../../style/theme';
 
 export const IconContainer = styled.div`
   position: relative;

@@ -1,8 +1,8 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { toggleMobileMenuVisibility } from "../../redux/mobile-menu/mobile-menu.actions";
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleMobileMenuVisibility } from '../../redux/mobile-menu/mobile-menu.actions';
 
-import { BurgerInner, BurgerWrap } from "./burger.styles";
+import { BurgerInner, BurgerWrap } from './burger.styles';
 
 const Burger = () => {
   const dispatch = useDispatch();

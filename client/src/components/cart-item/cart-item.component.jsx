@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
 import {
   CartItemIcon,
   CartItemDetails,
   CartItemContainer,
-} from "./cart-item.styles.js";
+} from './cart-item.styles';
 
 const CartItem = ({ product }) => {
   const { img, price, quantity, title } = product;

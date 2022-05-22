@@ -1,9 +1,10 @@
-import { mobileMenuActionTypes } from "./mobile-menu.types";
+import mobileMenuActionTypes from './mobile-menu.types';
 
 const INITIAL_STATE = {
   isMobileMenuVisible: false,
 };
 
+// eslint-disable-next-line default-param-last
 const mobileMenuReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case mobileMenuActionTypes.TOOGLE_MOBILE_MENU_VISIBILITY:

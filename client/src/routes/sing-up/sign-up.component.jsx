@@ -1,26 +1,26 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
+import { useNavigate } from 'react-router-dom';
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
-} from "../../utils/firebase/firebase.utils";
+} from '../../utils/firebase/firebase.utils';
 
-import Button from "../../components/button/Button.component";
-import FormInput from "../../components/form-input/form-input.component";
+import Button from '../../components/button/button.styles';
+import FormInput from '../../components/form-input/form-input.component';
 
-import { FormWrap } from "../sign-in/sign-in.styles";
-import { SignUpWrap, SignUpTitle } from "./sign-up.styles";
-import { useNavigate } from "react-router-dom";
+import { FormWrap } from '../sign-in/sign-in.styles';
+import { SignUpWrap, SignUpTitle } from './sign-up.styles';
 
 const defaultFormFields = {
-  displayName: "",
-  email: "",
-  password: "",
-  confirmPassword: "",
+  displayName: '',
+  email: '',
+  password: '',
+  confirmPassword: '',
 };
 
 const SignUp = () => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
 
@@ -37,7 +37,6 @@ const SignUp = () => {
     event.preventDefault();
 
     if (password !== confirmPassword) {
-      alert("passwords do not match");
       return;
     }
 
@@ -48,13 +47,13 @@ const SignUp = () => {
       );
 
       await createUserDocumentFromAuth(user, { displayName });
-      navigate("/sign-in", { replace: true });
+      navigate('/sign-in', { replace: true });
       resetFormFields();
     } catch (error) {
-      if ((error.code = "auth/email-already-in-use")) {
-        alert("this email already in use");
+      if (error.code === 'auth/email-already-in-use') {
+        console.log('email-already-in-use');
       } else {
-        console.log("user creation error", error);
+        console.log('user creation error', error);
       }
     }
   };

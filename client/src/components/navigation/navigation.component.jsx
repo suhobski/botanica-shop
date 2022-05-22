@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { UserContext } from "../../context/user.context";
-import { signAuthOut } from "../../utils/firebase/firebase.utils";
+import { UserContext } from '../../context/user.context';
+import { signAuthOut } from '../../utils/firebase/firebase.utils';
 
-import { NavigationContainer } from "./navigation.styles";
-import { NavigationLink } from "../navigation-link/navigation-link";
-import { useDispatch, useSelector } from "react-redux";
-import { closeMobileMenu } from "../../redux/mobile-menu/mobile-menu.actions";
+import NavigationContainer from './navigation.styles';
+import NavigationLink from '../navigation-link/navigation-link';
+import { closeMobileMenu } from '../../redux/mobile-menu/mobile-menu.actions';
 
 const Navigation = () => {
   const dispatch = useDispatch();

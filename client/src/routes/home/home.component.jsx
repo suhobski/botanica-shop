@@ -1,13 +1,13 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import { Subtitle, Title, HomeButton } from "./home.styles";
+import { Subtitle, Title, HomeButton } from './home.styles';
 
-function Home() {
+const Home = () => {
   const navigate = useNavigate();
 
   const goToCatalogHandler = () => {
-    navigate("/catalog");
+    navigate('/catalog');
   };
 
   return (
@@ -20,6 +20,6 @@ function Home() {
       <HomeButton onClick={goToCatalogHandler}>Перейти в каталог</HomeButton>
     </>
   );
-}
+};
 
 export default Home;

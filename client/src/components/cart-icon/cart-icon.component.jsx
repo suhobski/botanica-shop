@@ -1,11 +1,11 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { toggleCartHidden } from "../../redux/cart/cart.actions";
+import { toggleCartHidden } from '../../redux/cart/cart.actions';
 
-import { Icon, IconContainer, ItemCount } from "./cart-icon.styles";
+import { Icon, IconContainer, ItemCount } from './cart-icon.styles';
 
-function CartIcon() {
+const CartIcon = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cartItems);
   const allQuantity = cartItems.reduce(
@@ -16,9 +16,9 @@ function CartIcon() {
   const openCartDrawer = () => {
     if (!allQuantity) {
       return;
-    } else {
-      dispatch(toggleCartHidden());
     }
+
+    dispatch(toggleCartHidden());
   };
 
   return (
@@ -27,6 +27,6 @@ function CartIcon() {
       <ItemCount>{allQuantity}</ItemCount>
     </IconContainer>
   );
-}
+};
 
 export default CartIcon;

@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-export const NavigationLink = styled(Link)`
+const NavigationLink = styled(Link)`
   margin-right: 12px;
   text-transform: uppercase;
   cursor: pointer;
@@ -14,3 +14,5 @@ export const NavigationLink = styled(Link)`
     font-size: 40px;
   }
 `;
+
+export default NavigationLink;
