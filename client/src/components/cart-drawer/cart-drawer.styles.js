@@ -1,7 +1,16 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { backgroundColor } from "../../style/theme";
 
 import Button from "../button/Button.component";
+
+const cartIn = keyframes`
+  from {
+    right: -320px;
+  }
+  to {
+    right: 0;
+  }
+`;
 
 export const CartDropdownWrap = styled.div`
   position: fixed;
@@ -15,14 +24,14 @@ export const CartDropdownWrap = styled.div`
 
 export const CartDropdownContainer = styled.div`
   position: fixed;
-  right: ${({ isHidden }) => (isHidden ? "-320px" : 0)};
   display: flex;
   flex-direction: column;
   width: 320px;
   height: calc(100vh - 50px);
   padding: 30px 10px 10px;
   background-color: ${backgroundColor};
-  transition: right 0.3s ease-in;
+  animation: ${cartIn} 0.3s linear;
+  animation-fill-mode: forwards;
   z-index: 5;
 `;
 

@@ -10,7 +10,7 @@ import {
   CartDropdownContainer,
   CartItems,
   CartButton,
-} from "./cart-dropdown.styles";
+} from "./cart-drawer.styles";
 
 function CartDropdown() {
   const navigate = useNavigate();
