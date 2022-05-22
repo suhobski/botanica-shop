@@ -6,13 +6,13 @@ import { closeCartDrawer } from '../../redux/cart/cart.actions';
 import CartItem from '../cart-item/cart-item.component';
 
 import {
-  CartDropdownWrap,
-  CartDropdownContainer,
   CartItems,
   CartButton,
+  CartDrawerWrap,
+  CartDrawerContainer,
 } from './cart-drawer.styles';
 
-const CartDropdown = () => {
+const CartDrawer = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isHidden = useSelector((state) => state.cart.hidden);
@@ -20,30 +20,29 @@ const CartDropdown = () => {
 
   const goToCheckoutHandler = () => {
     navigate('/checkout');
+    dispatch(closeCartDrawer());
   };
 
   const closeCartDropdown = () => {
     dispatch(closeCartDrawer());
   };
 
-  if (isHidden) {
-    document.body.style.overflow = 'auto';
-  } else {
-    document.body.style.overflow = 'hidden';
-  }
+  const containerHandler = (event) => {
+    event.stopPropagation();
+  };
 
   return (
-    <CartDropdownWrap onClick={closeCartDropdown} isHidden={isHidden}>
-      <CartDropdownContainer isHidden={isHidden}>
+    <CartDrawerWrap onClick={closeCartDropdown} isHidden={isHidden}>
+      <CartDrawerContainer onClick={containerHandler}>
         <CartItems>
           {cartProducts.map((product) => (
             <CartItem key={product.id} product={product} />
           ))}
         </CartItems>
         <CartButton onClick={goToCheckoutHandler}>ОФОРМИТЬ ЗАКАЗ</CartButton>
-      </CartDropdownContainer>
-    </CartDropdownWrap>
+      </CartDrawerContainer>
+    </CartDrawerWrap>
   );
 };
 
-export default CartDropdown;
+export default CartDrawer;

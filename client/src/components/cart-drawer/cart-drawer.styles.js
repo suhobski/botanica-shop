@@ -12,7 +12,7 @@ const cartIn = keyframes`
   }
 `;
 
-export const CartDropdownWrap = styled.div`
+export const CartDrawerWrap = styled.div`
   position: fixed;
   top: 50px;
   left: 0;
@@ -22,7 +22,7 @@ export const CartDropdownWrap = styled.div`
   background-color: rgba(0, 0, 0, 0.3);
 `;
 
-export const CartDropdownContainer = styled.div`
+export const CartDrawerContainer = styled.div`
   position: fixed;
   display: flex;
   flex-direction: column;

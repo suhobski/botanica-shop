@@ -7,7 +7,7 @@ const Checkout = () => {
   return (
     <div>
       {cartProducts.map((product) => (
-        <div>{product.title}</div>
+        <div key={product.id}>{product.title}</div>
       ))}
     </div>
   );

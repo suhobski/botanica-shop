@@ -1,7 +1,8 @@
 const CartActionTypes = {
   TOGGLE_CART_HIDDEN: 'TOGGLE_CART_HIDDEN',
-  ADD_ITEM: 'ADD_ITEM',
   CLOSE_CART_DRAWER: 'CLOSE_CART_DRAWER',
+  ADD_ITEM: 'ADD_ITEM',
+  DELETE_ITEM: 'DELETE_ITEM',
 };
 
 export default CartActionTypes;
