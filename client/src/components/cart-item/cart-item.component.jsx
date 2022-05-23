@@ -1,6 +1,10 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { deleteItem } from '../../redux/cart/cart.actions';
+import {
+  decreaseItemsCount,
+  deleteItem,
+  increaseItemsCount,
+} from '../../redux/cart/cart.actions';
 
 import {
   CartItemIcon,
@@ -20,6 +24,22 @@ const CartItem = ({ product }) => {
     dispatch(deleteItem(id));
   };
 
+  const increaseCountHandler = () => {
+    if (quantity === 99) {
+      return;
+    }
+
+    dispatch(increaseItemsCount(id));
+  };
+
+  const decreaseCountHandler = () => {
+    if (quantity === 1) {
+      return;
+    }
+
+    dispatch(decreaseItemsCount(id));
+  };
+
   return (
     <CartItemContainer>
       <CartItemIcon src={img} alt={title} />
@@ -29,9 +49,10 @@ const CartItem = ({ product }) => {
           &#10005;
         </CartButtonDelete>
         <ItemPrice>
-          <CartButton>&#10094;</CartButton>
+          <CartButton onClick={decreaseCountHandler}>&#10094;</CartButton>
           {quantity}
-          <CartButton>&#10095;</CartButton>x<Price>{price}</Price>р.
+          <CartButton onClick={increaseCountHandler}>&#10095;</CartButton>x
+          <Price>{price}</Price>р.
         </ItemPrice>
       </CartItemDetails>
     </CartItemContainer>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { closeCartDrawer } from '../../redux/cart/cart.actions';
@@ -30,6 +30,12 @@ const CartDrawer = () => {
   const containerHandler = (event) => {
     event.stopPropagation();
   };
+
+  useEffect(() => {
+    if (cartProducts.length === 0) {
+      setTimeout(() => closeCartDropdown(), 300);
+    }
+  });
 
   return (
     <CartDrawerWrap onClick={closeCartDropdown} isHidden={isHidden}>

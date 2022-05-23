@@ -1,4 +1,4 @@
-const addItemToCart = (cartItems, cartItemToAdd) => {
+export const addItemToCart = (cartItems, cartItemToAdd) => {
   const existingCartItem = cartItems.find(
     (cartItem) => cartItem.id === cartItemToAdd.id
   );
@@ -14,4 +14,16 @@ const addItemToCart = (cartItems, cartItemToAdd) => {
   return [...cartItems, { ...cartItemToAdd, quantity: 1 }];
 };
 
-export default addItemToCart;
+export const increaseCartItem = (id, cartItems) => {
+  const cart = [...cartItems];
+  const currentItem = cart.find((item) => item.id === id);
+  currentItem.quantity += 1;
+  return cart;
+};
+
+export const decreaseCartItem = (id, cartItems) => {
+  const cart = [...cartItems];
+  const currentItem = cart.find((item) => item.id === id);
+  currentItem.quantity -= 1;
+  return cart;
+};

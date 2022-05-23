@@ -15,5 +15,15 @@ export const addItem = (item) => ({
 
 export const deleteItem = (itemId) => ({
   type: CartActionTypes.DELETE_ITEM,
-  payload: itemId,
+  itemId,
+});
+
+export const increaseItemsCount = (itemId) => ({
+  type: CartActionTypes.INCREASE_ITEMS_COUNT,
+  itemId,
+});
+
+export const decreaseItemsCount = (itemId) => ({
+  type: CartActionTypes.DECREASE_ITEMS_COUNT,
+  itemId,
 });
