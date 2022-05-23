@@ -44,3 +44,8 @@ export const CartItems = styled.div`
 export const CartButton = styled(Button)`
   margin-top: 10px;
 `;
+
+export const TotalCost = styled.h2`
+  margin: 18px 0;
+  font-weight: 400;
+`;
