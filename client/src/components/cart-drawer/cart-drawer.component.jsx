@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+
 import { closeCartDrawer } from '../../redux/cart/cart.actions';
 
 import CartItem from '../cart-item/cart-item.component';
@@ -11,6 +12,7 @@ import {
   CartDrawerWrap,
   CartDrawerContainer,
   TotalCost,
+  TotalCostNumber,
 } from './cart-drawer.styles';
 
 const CartDrawer = () => {
@@ -54,7 +56,9 @@ const CartDrawer = () => {
             <CartItem key={product.id} product={product} />
           ))}
         </CartItems>
-        <TotalCost>ИТОГО: {totalCost}</TotalCost>
+        <TotalCost>
+          ИТОГО: <TotalCostNumber>{totalCost} р.</TotalCostNumber>
+        </TotalCost>
         <CartButton onClick={goToCheckoutHandler}>ОФОРМИТЬ ЗАКАЗ</CartButton>
       </CartDrawerContainer>
     </CartDrawerWrap>

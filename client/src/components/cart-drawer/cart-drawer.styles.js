@@ -49,3 +49,8 @@ export const TotalCost = styled.h2`
   margin: 18px 0;
   font-weight: 400;
 `;
+
+export const TotalCostNumber = styled.span`
+  display: inline-block;
+  margin: 0 10px;
+`;
