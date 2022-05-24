@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import {
   decreaseItemsCount,
@@ -17,8 +17,15 @@ import {
 } from './cart-item.styles';
 
 const CartItem = ({ product }) => {
-  const { id, img, price, quantity, title } = product;
+  const { id, img, price, quantity, title, isAddedNow } = product;
   const dispatch = useDispatch();
+  const [activeItem, setActiveItem] = useState(isAddedNow);
+
+  if (activeItem) {
+    setTimeout(() => {
+      setActiveItem(false);
+    }, 1000);
+  }
 
   const deleteProductFromCart = () => {
     dispatch(deleteItem(id));
@@ -41,7 +48,7 @@ const CartItem = ({ product }) => {
   };
 
   return (
-    <CartItemContainer>
+    <CartItemContainer activeItem={activeItem}>
       <CartItemIcon src={img} alt={title} />
       <CartItemDetails>
         <span>{title}</span>

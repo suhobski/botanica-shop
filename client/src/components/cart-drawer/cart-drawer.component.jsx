@@ -59,6 +59,7 @@ const CartDrawer = () => {
         <TotalCost>
           ИТОГО: <TotalCostNumber>{totalCost} р.</TotalCostNumber>
         </TotalCost>
+        <CartButton onClick={closeCartDropdown}>ПРОДОЛЖИТЬ ПОКУПКИ</CartButton>
         <CartButton onClick={goToCheckoutHandler}>ОФОРМИТЬ ЗАКАЗ</CartButton>
       </CartDrawerContainer>
     </CartDrawerWrap>

@@ -28,7 +28,7 @@ export const CartDrawerContainer = styled.div`
   flex-direction: column;
   width: 320px;
   height: calc(100vh - 50px);
-  padding: 30px 10px 10px;
+  padding: 4px;
   background-color: ${backgroundColor};
   animation: ${cartIn} 0.3s linear;
   animation-fill-mode: forwards;
