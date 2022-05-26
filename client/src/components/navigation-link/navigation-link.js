@@ -10,7 +10,7 @@ const NavigationLink = styled(Link)`
     margin-right: 0;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 767px) {
     font-size: 40px;
   }
 `;

@@ -10,7 +10,7 @@ export const BurgerWrap = styled.div`
   cursor: pointer;
   z-index: 50;
 
-  @media (max-width: 500px) {
+  @media (max-width: 767px) {
     display: block;
   }
 `;

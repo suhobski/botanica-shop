@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import { backgroundColor } from '../../style/theme';
 
-import Button from '../button/button.styles';
+import Button from '../UI/buttons/button.styles';
 
 const cartIn = keyframes`
   from {
@@ -42,11 +42,12 @@ export const CartItems = styled.div`
 `;
 
 export const CartButton = styled(Button)`
-  margin-top: 10px;
+  margin: 10px 8px 0;
 `;
 
 export const TotalCost = styled.h2`
   margin: 18px 0;
+  padding: 0 8px;
   font-weight: 400;
 `;
 

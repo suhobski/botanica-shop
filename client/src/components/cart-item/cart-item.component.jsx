@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+
 import {
   decreaseItemsCount,
   deleteItem,
   increaseItemsCount,
 } from '../../redux/cart/cart.actions';
 
+import DeleteButton from '../UI/buttons/delete-button.styles';
+import IconButton from '../UI/buttons/icon-button.styles';
 import {
   CartItemIcon,
   CartItemDetails,
   CartItemContainer,
   ItemPrice,
-  CartButton,
-  CartButtonDelete,
   Price,
 } from './cart-item.styles';
 
@@ -52,13 +53,11 @@ const CartItem = ({ product }) => {
       <CartItemIcon src={img} alt={title} />
       <CartItemDetails>
         <span>{title}</span>
-        <CartButtonDelete onClick={deleteProductFromCart}>
-          &#10005;
-        </CartButtonDelete>
+        <DeleteButton onClick={deleteProductFromCart}>&#10005;</DeleteButton>
         <ItemPrice>
-          <CartButton onClick={decreaseCountHandler}>&#10094;</CartButton>
+          <IconButton onClick={decreaseCountHandler}>&#10094;</IconButton>
           {quantity}
-          <CartButton onClick={increaseCountHandler}>&#10095;</CartButton>x
+          <IconButton onClick={increaseCountHandler}>&#10095;</IconButton>x
           <Price>{price}</Price>р.
         </ItemPrice>
       </CartItemDetails>

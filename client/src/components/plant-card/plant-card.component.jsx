@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import { addItem, toggleCartHidden } from '../../redux/cart/cart.actions';
 
-import Button from '../button/button.styles';
+import Button from '../UI/buttons/button.styles';
 
 import {
   CatalogItemComtainer,

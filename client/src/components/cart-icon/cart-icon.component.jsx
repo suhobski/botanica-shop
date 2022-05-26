@@ -1,11 +1,13 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 
 import { toggleCartHidden } from '../../redux/cart/cart.actions';
 
 import { Icon, IconContainer, ItemCount } from './cart-icon.styles';
 
 const CartIcon = () => {
+  const location = useLocation();
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cartItems);
   const allQuantity = cartItems.reduce(
@@ -21,8 +23,16 @@ const CartIcon = () => {
     dispatch(toggleCartHidden());
   };
 
+  const cartIconHandler = () => {
+    if (location.pathname === '/checkout') {
+      return;
+    }
+
+    openCartDrawer();
+  };
+
   return (
-    <IconContainer onClick={openCartDrawer}>
+    <IconContainer onClick={cartIconHandler}>
       <Icon />
       <ItemCount>{allQuantity}</ItemCount>
     </IconContainer>

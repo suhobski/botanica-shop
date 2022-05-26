@@ -15,7 +15,7 @@ import {
   SignInTitle,
 } from './sign-in.styles';
 
-import Button from '../../components/button/button.styles';
+import Button from '../../components/UI/buttons/button.styles';
 import FormInput from '../../components/form-input/form-input.component';
 
 const SingIn = () => {

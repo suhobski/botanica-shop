@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import { textColor } from '../../style/theme';
+import { secondBackgroundColor } from '../../style/theme';
 
 export const CartItemContainer = styled.div`
   display: flex;
   padding: 4px;
-  margin-bottom: 4px 4px 10px;
-  border: 1px solid
-    ${({ activeItem }) => (activeItem ? textColor : 'transparent')};
+  margin: 4px 4px 10px;
+  background-color: ${({ activeItem }) =>
+    activeItem ? secondBackgroundColor : 'transparent'};
 `;
 
 export const CartItemIcon = styled.img`
@@ -31,22 +31,6 @@ export const ItemPrice = styled.p`
   grid-column: 1 / -1;
   width: 100%;
   text-align: justify;
-`;
-
-export const CartButton = styled.button`
-  display: inline-block;
-  margin: 0 8px;
-  padding: 8px;
-  border: none;
-  outline: none;
-  background-color: transparent;
-  cursor: pointer;
-`;
-
-export const CartButtonDelete = styled(CartButton)`
-  position: relative;
-  bottom: 8px;
-  font-size: 20px;
 `;
 
 export const Price = styled.span`

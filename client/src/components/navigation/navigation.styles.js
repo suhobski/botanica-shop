@@ -7,7 +7,7 @@ const NavigationContainer = styled.nav`
   display: flex;
   z-index: 40;
 
-  @media (max-width: 500px) {
+  @media (max-width: 767px) {
     position: fixed;
     top: 0;
     left: 0;
@@ -19,6 +19,7 @@ const NavigationContainer = styled.nav`
     align-items: center;
     row-gap: 2rem;
     background-color: ${secondBackgroundColor};
+    opacity: 0.99;
   }
 `;
 
