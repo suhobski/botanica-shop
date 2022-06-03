@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
@@ -41,12 +41,6 @@ const CartDrawer = () => {
   const containerHandler = (event) => {
     event.stopPropagation();
   };
-
-  useEffect(() => {
-    if (cartProducts.length === 0) {
-      setTimeout(() => closeCartDropdown(), 300);
-    }
-  });
 
   return (
     <CartDrawerWrap onClick={closeCartDropdown} isHidden={isHidden}>

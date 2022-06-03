@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import {
+  closeCartDrawer,
   decreaseItemsCount,
   deleteItem,
   increaseItemsCount,
@@ -18,8 +19,10 @@ import {
 } from './cart-item.styles';
 
 const CartItem = ({ product }) => {
-  const { id, img, price, quantity, title, isAddedNow } = product;
   const dispatch = useDispatch();
+  const cartProducts = useSelector((state) => state.cart.cartItems);
+  const { id, img, price, quantity, title, isAddedNow } = product;
+  const imgPath = `../img/${img}`;
   const [activeItem, setActiveItem] = useState(isAddedNow);
 
   if (activeItem) {
@@ -29,6 +32,10 @@ const CartItem = ({ product }) => {
   }
 
   const deleteProductFromCart = () => {
+    if (cartProducts.length === 1) {
+      setTimeout(() => dispatch(closeCartDrawer()), 500);
+    }
+
     dispatch(deleteItem(id));
   };
 
@@ -50,7 +57,7 @@ const CartItem = ({ product }) => {
 
   return (
     <CartItemContainer activeItem={activeItem}>
-      <CartItemIcon src={img} alt={title} />
+      <CartItemIcon src={imgPath} alt={title} />
       <CartItemDetails>
         <span>{title}</span>
         <DeleteButton onClick={deleteProductFromCart}>&#10005;</DeleteButton>

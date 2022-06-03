@@ -15,6 +15,7 @@ import {
 const CatalogItem = ({ plant }) => {
   const dispatch = useDispatch();
   const { img, title, price } = plant;
+  const imgPath = `../img/${img}`;
   const cardPrice = price.toFixed(2);
 
   const addPlantHandler = () => {
@@ -24,7 +25,7 @@ const CatalogItem = ({ plant }) => {
 
   return (
     <CatalogItemComtainer>
-      <PlantImage src={img} alt={title} />
+      <PlantImage src={imgPath} alt={title} />
       <p>{title}</p>
       <PlantFooter>
         <PlantPrice>{cardPrice}</PlantPrice>

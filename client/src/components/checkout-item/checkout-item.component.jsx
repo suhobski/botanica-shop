@@ -20,6 +20,7 @@ import {
 
 const CheckoutItem = ({ product }) => {
   const { id, img, price, quantity, title } = product;
+  const imgPath = `./img/${img}`;
   const dispatch = useDispatch();
 
   const deleteProductFromCart = () => {
@@ -43,7 +44,7 @@ const CheckoutItem = ({ product }) => {
   };
   return (
     <CheckoutItemContainer>
-      <CheckoutItemIcon src={img} alt={title} />
+      <CheckoutItemIcon src={imgPath} alt={title} />
       <Title>{title}</Title>
       <PriceDetails>
         <IconButton onClick={decreaseCountHandler}>&#10094;</IconButton>

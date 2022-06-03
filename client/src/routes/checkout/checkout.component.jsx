@@ -12,6 +12,8 @@ import {
   CheckoutTotalCostNumber,
 } from './checkout.styles';
 
+const EmptyCartMessage = () => <p>Корзина с товарами пуста</p>;
+
 const Checkout = () => {
   const cartProducts = useSelector((state) => state.cart.cartItems);
   const totalCost = useMemo(() => {
@@ -31,9 +33,13 @@ const Checkout = () => {
         <span>Стоимость</span>
         <span>Удалить</span>
       </CheckoutHeader>
-      {cartProducts.map((product) => (
-        <CheckoutItem key={product.id} product={product} />
-      ))}
+      {cartProducts.length !== 0 ? (
+        cartProducts.map((product) => (
+          <CheckoutItem key={product.id} product={product} />
+        ))
+      ) : (
+        <EmptyCartMessage />
+      )}
       <CheckoutTotalCost>
         ИТОГО: <CheckoutTotalCostNumber>{totalCost} р.</CheckoutTotalCostNumber>
       </CheckoutTotalCost>

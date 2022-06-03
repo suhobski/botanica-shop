@@ -7,6 +7,7 @@ const Button = styled.button`
   border: 1px solid ${textColor};
   border-radius: 12px;
   background: ${secondBackgroundColor};
+  letter-spacing: 0.05em;
 
   &:hover {
     cursor: pointer;
