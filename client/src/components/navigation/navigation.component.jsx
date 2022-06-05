@@ -1,16 +1,16 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { UserContext } from '../../context/user.context';
 import { signAuthOut } from '../../utils/firebase/firebase.utils';
+import { closeMobileMenu } from '../../redux/mobile-menu/mobile-menu.actions';
+
+import NavigationLink from '../navigation-link/navigation-link';
 
 import NavigationContainer from './navigation.styles';
-import NavigationLink from '../navigation-link/navigation-link';
-import { closeMobileMenu } from '../../redux/mobile-menu/mobile-menu.actions';
 
 const Navigation = () => {
   const dispatch = useDispatch();
-  const { currentUser } = useContext(UserContext);
+  const currentUser = useSelector((state) => state.user.currentUser);
   const isMenuOpen = useSelector(
     (state) => state.mobileMenu.isMobileMenuVisible
   );

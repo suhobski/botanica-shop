@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import { fetchAllProducts } from './redux/catalog/catalog.actions';
+import useUser from './utils/hooks/useUser';
 
 import Catalog from './routes/catalog/catalog.component';
 import Home from './routes/home/home.component';
@@ -18,6 +19,8 @@ const App = () => {
   useEffect(() => {
     dispatch(fetchAllProducts());
   }, []);
+
+  useUser();
 
   return (
     <Routes>

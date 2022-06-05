@@ -5,7 +5,6 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 
 import { ThemeContext } from './context/ThemeContext';
-import { UserProvider } from './context/user.context';
 
 import App from './App';
 
@@ -18,12 +17,10 @@ root.render(
   <React.StrictMode>
     <BrowserRouter basename="/botanica-shop">
       <Provider store={store}>
-        <UserProvider>
-          <ThemeContext>
-            <GlobalStyle />
-            <App />
-          </ThemeContext>
-        </UserProvider>
+        <ThemeContext>
+          <GlobalStyle />
+          <App />
+        </ThemeContext>
       </Provider>
     </BrowserRouter>{' '}
   </React.StrictMode>
