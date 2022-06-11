@@ -16,7 +16,9 @@ const Navigation = () => {
   );
 
   const closeMenuHandle = () => {
-    dispatch(closeMobileMenu());
+    if (isMenuOpen) {
+      dispatch(closeMobileMenu());
+    }
   };
 
   return (

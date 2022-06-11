@@ -6,13 +6,13 @@ import Navigation from '../navigation/navigation.component';
 import Burger from '../burger/burger.component';
 
 import HeaderContainer from './header.styles';
-import ThemeButtonStyles from '../UI/buttons/theme-button/theme-button.styles';
+import ThemeButton from '../UI/buttons/theme-button/theme-button.component';
 
 const Header = () => (
   <HeaderContainer>
     <Logo />
     <Navigation />
-    <ThemeButtonStyles />
+    <ThemeButton />
     <Cart />
     <Burger />
   </HeaderContainer>
