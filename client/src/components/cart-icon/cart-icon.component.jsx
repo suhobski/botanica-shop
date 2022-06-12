@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
-import { toggleCartHidden } from '../../redux/cart/cart.actions';
+import { toggleCartHidden } from '../../store/features/cart/cart.slice';
 
 import { Icon, IconContainer, ItemCount } from './cart-icon.styles';
 

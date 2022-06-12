@@ -9,7 +9,7 @@ import { CategoryContainer, CategoryItems } from './category.styles';
 const Category = () => {
   const { category } = useParams();
   const categoryItems = useSelector(
-    (state) => state.catalog.products?.[category]
+    (state) => state.catalog.plants?.[category]
   );
   const categoryTitle = category[0].toUpperCase() + category.substring(1);
 

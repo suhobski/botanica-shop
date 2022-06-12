@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleMobileMenuVisibility } from '../../redux/mobile-menu/mobile-menu.actions';
+import { toggleMobileMenuVisibility } from '../../store/features/mobile-menu/mobileMenuSlice';
 
 import { BurgerInner, BurgerWrap } from './burger.styles';
 

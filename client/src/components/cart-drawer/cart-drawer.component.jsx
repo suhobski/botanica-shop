@@ -1,8 +1,7 @@
 import React, { useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-
-import { closeCartDrawer } from '../../redux/cart/cart.actions';
+import { closeCartDrawer } from '../../store/features/cart/cart.slice';
 
 import CartItem from '../cart-item/cart-item.component';
 

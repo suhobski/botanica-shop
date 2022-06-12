@@ -1,7 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
-import { closeMobileMenu } from '../../redux/mobile-menu/mobile-menu.actions';
+import { closeMobileMenu } from '../../store/features/mobile-menu/mobileMenuSlice';
 
 import LogoLink from './logo.styles';
 

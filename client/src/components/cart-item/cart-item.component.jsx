@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
 import {
   closeCartDrawer,
   decreaseItemsCount,
   deleteItem,
   increaseItemsCount,
-} from '../../redux/cart/cart.actions';
+} from '../../store/features/cart/cart.slice';
 
 import DeleteButton from '../UI/buttons/delete-button.styles';
 import IconButton from '../UI/buttons/icon-button.styles';

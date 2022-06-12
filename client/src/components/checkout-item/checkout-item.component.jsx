@@ -5,7 +5,7 @@ import {
   decreaseItemsCount,
   deleteItem,
   increaseItemsCount,
-} from '../../redux/cart/cart.actions';
+} from '../../store/features/cart/cart.slice';
 
 import IconButton from '../UI/buttons/icon-button.styles';
 import {

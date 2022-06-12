@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { closeMobileMenu } from '../../store/features/mobile-menu/mobileMenuSlice';
 
 import { signAuthOut } from '../../utils/firebase/firebase.utils';
-import { closeMobileMenu } from '../../redux/mobile-menu/mobile-menu.actions';
 
 import NavigationLink from '../navigation-link/navigation-link';
 

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import setCurrentUser from '../../redux/user/user.actions';
+import { setCurrentUser } from '../../store/features/user/user.slice';
 
 import {
   createUserDocumentFromAuth,
@@ -19,7 +19,7 @@ const useUser = () => {
     });
 
     return unsubscribe;
-  }, []);
+  }, [dispatch]);
 };
 
 export default useUser;

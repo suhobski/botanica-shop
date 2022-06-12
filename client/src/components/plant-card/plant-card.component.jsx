@@ -1,7 +1,9 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-
-import { addItem, toggleCartHidden } from '../../redux/cart/cart.actions';
+import {
+  addItem,
+  toggleCartHidden,
+} from '../../store/features/cart/cart.slice';
 
 import Button from '../UI/buttons/button.styles';
 

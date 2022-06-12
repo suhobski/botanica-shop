@@ -1,6 +1,8 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { fetchProducts } from '../../store/features/catalog/catalog.slice';
+
 import {
   CatalogContainer,
   CatalogCategories,
@@ -10,12 +12,17 @@ import {
 } from './catalog.styles';
 
 const Catalog = () => {
-  const products = useSelector((state) => state.catalog.products);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const products = useSelector((state) => state.catalog.plants);
 
   const previewClickHandle = (e, category) => {
     navigate(category);
   };
+
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch]);
 
   return (
     <CatalogContainer>
